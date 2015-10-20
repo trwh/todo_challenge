@@ -4,9 +4,11 @@ githubUserSearch.controller('GitUserSearchController', ['$resource',function($re
 
   var searchResource = $resource('https://api.github.com/search/users');
 
+  var access_token = gitAccessToken;
+
   self.doSearch = function() {
     self.searchResult = searchResource.get(
-      { q: self.searchTerm }
+      { q: self.searchTerm, access_token:gitAccessToken } 
     );
   };
 
