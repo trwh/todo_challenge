@@ -34,11 +34,16 @@ describe('GitUserSearchController', function() {
     beforeEach(inject(function($httpBackend) {
       httpBackend = $httpBackend
       httpBackend
-      .when("GET", "https://api.github.com/search/users?access_token=" + gitAccessToken + "&q=hello")
+      .expectGET("https://api.github.com/search/users?access_token=" + gitAccessToken + '&q=hello')
       .respond(
         { items: items }
       );
-  }));
+    }));
+
+    afterEach(function() {
+    httpBackend.verifyNoOutstandingExpectation();
+    httpBackend.verifyNoOutstandingRequest();
+   });
 
     console.log(gitAccessToken)
     it('displays search results', function() {
