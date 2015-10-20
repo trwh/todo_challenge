@@ -5,6 +5,7 @@ describe('GitUserSearchController', function() {
 
   beforeEach(inject(function($controller) {
     ctrl = $controller('GitUserSearchController');
+
   }));
 
   it('initialises with an empty search result and term', function() {
@@ -28,9 +29,22 @@ describe('GitUserSearchController', function() {
       }
     ];
 
+    var httpBackend;
+
+    beforeEach(inject(function($httpBackend) {
+      httpBackend = $httpBackend
+      httpBackend
+      .when("GET", "https://api.github.com/search/users?access_token=" + gitAccessToken + "&q=hello")
+      .respond(
+        { items: items }
+      );
+  }));
+
+    console.log(gitAccessToken)
     it('displays search results', function() {
       ctrl.searchTerm = 'hello';
       ctrl.doSearch();
+      httpBackend.flush();
       expect(ctrl.searchResult.items).toEqual(items);
     });
 
