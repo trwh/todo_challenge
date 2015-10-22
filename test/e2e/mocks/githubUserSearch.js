@@ -1,7 +1,7 @@
 module.exports = [
 {
   request: {
-             path: 'https://api.github.com/search/users?access_token=' + gitAccessToken + '&q=spike01',
+             path: 'https://api.github.com/search/users',
              method: 'GET'
            },
   response: {
