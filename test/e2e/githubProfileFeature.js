@@ -10,6 +10,10 @@ describe('GitHub profile finder', function() {
     browser.get('http://localhost:8080');
   })
 
+  afterEach(function(){
+    mock.teardown();
+  });
+
   it('has a title', function() {
     expect(browser.getTitle()).toEqual('Github user search');
   });
