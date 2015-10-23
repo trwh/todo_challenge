@@ -21,6 +21,7 @@
     "protractor-http-mock": "^0.1.17"
   },
   "dependencies": {
-    "http-server": "^0.8.5"
+    "http-server": "^0.8.5",
+    "bower": "^1.6.3"
   }
 }
