@@ -13,4 +13,4 @@ before_script:
   - webdriver-manager update
   - webdriver-manager start > /dev/null &
   - npm start > /dev/null &
-  - http-server
+  - http-server > /dev/null &
