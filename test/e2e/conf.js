@@ -1,6 +1,6 @@
 exports.config = {
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['githubProfileFeature.js'],
+  specs: ['toDoListFeature.js'],
   mocks: {
     default: [],
     dir: 'mocks' // default value: 'mocks'
