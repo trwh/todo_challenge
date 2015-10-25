@@ -15,24 +15,16 @@ describe('GitHub profile finder', function() {
   });
 
   it('has a title', function() {
-    expect(browser.getTitle()).toEqual('Github user search');
+    expect(browser.getTitle()).toEqual('Todo list');
   });
 
-  it('finds profiles', function() {
+  it('adds an item to the todo list', function() {
 
-    searchBox.sendKeys('spike01');
-    searchButton.click();
+    inputBox.sendKeys('Make TODO list');
+    addTaskButton.click();
 
-    var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.get(0).getText()).toEqual('spike01');
-  });
-
-  it('finds the last Spike', function() { //this is a silly test, but roll with it
-    searchBox.sendKeys('spike01');
-    searchButton.click();
-
-    var profiles = element.all(by.repeater('user in searchCtrl.searchResult.items'));
-    expect(profiles.last().getText()).toEqual('spike01');
+    var tasks = element.all(by.repeater('task in taskCtrl.taskList.items'));
+    expect(tasks.get(0).getText()).toEqual('Make TODO list');
   });
 
 });
