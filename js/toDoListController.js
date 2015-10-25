@@ -9,4 +9,9 @@ toDoList.controller('toDoListController', [function() {
     self.taskText = "What needs to be done?";
   };
 
+  self.deleteItem = function(index) {
+    self.toDoItems.splice(index, 1);
+    self.taskText = "What needs to be done?";
+  };
+
 }]);

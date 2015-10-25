@@ -17,4 +17,11 @@ describe('GitUserSearchController', function() {
     expect(ctrl.toDoItems).toEqual(["Make TODO list"]);
   });
 
+  it('can delete a task previously added', function() {
+    ctrl.taskText = "Make TODO list";
+    ctrl.addItem();
+    ctrl.deleteItem(0);
+    expect(ctrl.toDoItems).toEqual([]);
+  });
+
 });
