@@ -1,18 +1,12 @@
 githubUserSearch.controller('GitUserSearchController', ['Search',function(Search) {
 
   var self = this;
-  var toDoItems = [];
-
-  self.doSearch = function() {
-    Search.query(self.searchTerm)
-      .then(function(response) {
-        self.searchResult = response.data;
-
-      })
-  };
+  self.toDoItems = [];
+  self.taskText = "What needs to be done?";
 
   self.addItem = function() {
-
+    self.toDoItems.push(self.taskText);
+    self.taskText = "What needs to be done?";
   };
 
 }]);

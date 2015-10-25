@@ -5,16 +5,19 @@ describe('GitUserSearchController', function() {
 
   beforeEach(inject(function($controller) {
     ctrl = $controller('GitUserSearchController');
-
   }));
 
-  it('initialises with an empty search result and term', function() {
-    expect(ctrl.searchResult).toBeUndefined();
-    expect(ctrl.searchTerm).toBeUndefined();
+  it('initialises with an empty todo list', function() {
+    expect(ctrl.toDoItems).toEqual([]);
   });
 
+  it('can recall a task added', function() {
+    ctrl.taskText = "Make TODO list";
+    ctrl.addItem();
+    expect(ctrl.toDoItems).toEqual(["Make TODO list"]);
+  });
 
-  describe('when seraching for a user', function() {
+  xdescribe('when seraching for a user', function() {
 
     var items = [
       {

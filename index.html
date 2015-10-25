@@ -14,19 +14,16 @@
     <script src="js/gitUserSearchController.js"></script>
   </head>
 
-  <body ng-controller="GitUserSearchController as searchCtrl">
+  <body ng-controller="GitUserSearchController as taskCtrl">
     <div>
       <form class="form-horizontal">
-        <input type="text"  ng-model="searchCtrl.searchTerm"
-                            ng-change="searchCtrl.doSearch()"
-                            ng-model-options="{ updateOn: 'default blur',
-                            debounce: {'default': 500, 'blur': 0} }">
-        <button class="btn" ng-click="searchCtrl.doSearch()">Search</button>
+        <input type="text" ng-model="taskCtrl.taskText">
+        <button class="btn" ng-click="taskCtrl.addItem()">Add task</button>
       </form>
-      <ul class="list-group">
-        <li ng-repeat="user in searchCtrl.searchResult.items">
-          <img ng-src="{{user.avatar_url}}&s=50">
-          <a ng-href="{{user.html_url}}">{{user.login}}</a>
+
+      <ul class="task-group">
+        <li ng-repeat="task in taskCtrl.toDoItems">
+          {{ task }}
         </li>
       </ul>
     </div>
