@@ -1,3 +1,15 @@
+# Questions for code review
+* I assume Karma runs Jasmine? Why can I use `.toNotContain()` in my feature tests (Protractor) but not my unit tests (Karma)?
+* How would you handle passing secrets to Travis when you can't add them to Git?
+* Is there a way of reading the content of a text box using Selenium? At the moment I can only check the `ng-model` it's bound to, which isn't quite the same thing.
+* I don't understand why we used a factory in the Github tool. I didn't need one here I don't think. Can you help?
+* How would you integrate this with a database - by using Rails? I can't picture how that would look, do you have an example in your Github account?
+
+# Things still to do
+The challenge is complete for the MVP but without being able to mark tasks done. This seems like a huge omission but I'm proud of the 100% test coverage with both unit and feature tests, and working CI (no mean feat as it was not set up for us!).
+
+Also, given that you can delete tasks it would be easy to use the same technique (finding the relevant task by its `$index` in the `ng-repeat` loop) to mark one as complete, with a strikethrough for example.
+
 # Todo Challenge
 
 * Deadline: submit completed pull request by 9am on Monday
@@ -6,7 +18,7 @@
 Steps
 -------
 
-1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan 
+1. Fill out your learning plan self review for the week: https://github.com/makersacademy/learning_plan
 2. Fork this repo, and clone to your local machine
 3. Complete the following challenge:
 
@@ -64,7 +76,7 @@ Don't worry about deployment, and make sure you read the CONTRIBUTING.md when su
 
 ## CI
 
-Read the `.travis.yml` if any of the steps below don't make sense! 
+Read the `.travis.yml` if any of the steps below don't make sense!
 
 * Make sure you have set up `npm test` in your `package.json` so that it runs your Karma tests
 * Make sure you have your Protractor config file at `e2e/conf.js`
