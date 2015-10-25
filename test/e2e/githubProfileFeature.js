@@ -1,5 +1,3 @@
-var mock = require('protractor-http-mock');
-
 describe('GitHub profile finder', function() {
 
   var taskBox = element(by.model('taskCtrl.taskText'));
@@ -7,13 +5,8 @@ describe('GitHub profile finder', function() {
   var taskButton = element(by.className('btn'));
 
   beforeEach(function() {
-    mock(['githubUserSearch.js']);
     browser.get('http://localhost:8080');
   })
-
-  afterEach(function(){
-    mock.teardown();
-  });
 
   it('has a title', function() {
     expect(browser.getTitle()).toEqual('Todo list');

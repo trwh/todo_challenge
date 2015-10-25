@@ -1,10 +1,10 @@
 describe('GitUserSearchController', function() {
-  beforeEach(module('GitUserSearch'));
+  beforeEach(module('toDoList'));
 
   var ctrl;
 
   beforeEach(inject(function($controller) {
-    ctrl = $controller('GitUserSearchController');
+    ctrl = $controller('toDoListController');
   }));
 
   it('initialises with an empty todo list', function() {

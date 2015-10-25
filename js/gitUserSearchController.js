@@ -1,4 +1,4 @@
-githubUserSearch.controller('GitUserSearchController', ['Search',function(Search) {
+toDoList.controller('toDoListController', [function() {
 
   var self = this;
   self.toDoItems = [];
